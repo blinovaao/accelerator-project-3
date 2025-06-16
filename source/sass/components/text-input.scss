@@ -1,0 +1,138 @@
+.text-input {
+  display: flex;
+  flex-direction: column-reverse;
+
+  gap: 11px;
+
+  @media (min-width: $tablet) {
+    gap: 12px;
+  }
+
+  @media (min-width: $desktop) {
+    gap: 11px;
+  }
+}
+
+
+.text-input__input {
+  background-color: transparent;
+
+  display: block;
+
+  width: 100%;
+  height: 50px;
+
+  padding: 16px 24px;
+
+  border-radius: 8px;
+
+  transition: border-color 0.3s, background-color 0.3s, color 0.3s;
+}
+
+.text-input__input--light {
+  color: $color-white;
+
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.text-input__input--light:hover,
+.text-input__input--light:focus-visible,
+.text-input__input--light:active {
+  background-color: transparent;
+
+  border-color: $color-white;
+
+  outline: none;
+}
+
+.text-input__input--light:disabled,
+.text-input__input--light.disabled {
+  pointer-events: none;
+
+  border-color: $color-white;
+
+  background-color: rgba(255, 255, 255, 0.2);
+
+  opacity: 0.4;
+}
+
+.text-input__label {
+  font-size: 12px;
+  line-height: 14px;
+
+  transition: color 0.3s;
+
+  @media (min-width: $tablet) {
+    font-size: 14px;
+    line-height: 20px;
+  }
+}
+
+.text-input__input--light ~ .text-input__label {
+  color: rgba(240, 239, 233, 0.8);
+}
+
+.text-input__input--light:hover ~ .text-input__label,
+.text-input__input--light:focus-visible ~ .text-input__label,
+.text-input__input--light:active ~ .text-input__label {
+  color: $color-beige;
+}
+
+.text-input__input--light:disabled ~ .text-input__label,
+.text-input__input--light.disabled ~ .text-input__label {
+  color: rgba(240, 239, 233, 0.6);
+}
+
+.text-input__input--dark {
+  color: $color-dark-grey;
+
+  border: 1px solid rgba(72, 72, 72, 0.3);
+}
+
+.text-input__input--dark:hover,
+.text-input__input--dark:focus-visible,
+.text-input__input--dark:active {
+  background-color: transparent;
+
+  border-color: $color-dark-grey;
+
+  outline: none;
+}
+
+.text-input__input--dark:disabled,
+.text-input__input--dark.disabled {
+  pointer-events: none;
+
+  border-color: rgba(169, 175, 183, 0.5);
+
+  background-color: rgba(169, 175, 183, 0.2);
+}
+
+.text-input__input--dark ~ .text-input__label {
+  color: rgba(72, 72, 72, 0.8);
+}
+
+.text-input__input--dark:hover ~ .text-input__label,
+.text-input__input--dark:focus-visible ~ .text-input__label,
+.text-input__input--dark:active ~ .text-input__label {
+  color: $color-dark-grey;
+}
+
+.text-input__input--dark:disabled ~ .text-input__label,
+.text-input__input--dark.disabled ~ .text-input__label {
+  color: rgba(169, 175, 183, 0.6);
+}
+
+.text-input__input--error {
+  border-color: $color-red;
+
+  background-color: rgba(255, 94, 102, 0.2);
+}
+
+.text-input__input--light.text-input__input--error ~ .text-input__label {
+  color: rgba(240, 239, 233, 0.8);
+}
+
+.text-input__input--dark.text-input__input--error ~ .text-input__label {
+  color: $color-dark-grey;
+}

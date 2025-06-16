@@ -1,0 +1,28 @@
+.page-body {
+  position: relative;
+
+  overflow-x: hidden;
+
+  max-width: 100vw;
+
+  &::after {
+    content: "";
+    position: absolute;
+
+    background-color: transparent;
+  }
+}
+
+.page-body__overlay {
+  position: fixed;
+
+  z-index: 10;
+}
+
+.page-body__header {
+  position: absolute;
+
+  width: 100%;
+
+  z-index: 11;
+}

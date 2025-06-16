@@ -1,0 +1,51 @@
+.programs-slider {
+  @media (min-width: $desktop) {
+    overflow-x: clip;
+  }
+}
+
+.programs-slider__buttons {
+  position: absolute;
+
+  top: -56px;
+  right: 1px;
+
+  @media (min-width: $tablet) {
+    top: unset;
+    bottom: -10px;
+  }
+}
+
+.programs-slider__list {
+  @include list-style;
+
+  display: flex;
+  gap: 15px;
+
+  width: max-content;
+
+  margin: 0 0 30px;
+
+  @media (min-width: $tablet) {
+    gap: 30px;
+
+    margin: 0 0 50px;
+  }
+
+  @media (min-width: $desktop) {
+    gap: 32px;
+  }
+}
+
+.programs-slider__item {
+  position: relative;
+}
+
+.programs-slider__scroll {
+  display: none;
+
+  @media (min-width: $tablet) {
+    display: block;
+  }
+}
+

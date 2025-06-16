@@ -1,0 +1,186 @@
+.select__wrapper {
+  display: flex;
+  flex-direction: column-reverse;
+
+  gap: 11px;
+
+  position: relative;
+
+  &::after {
+    content: "";
+    position: absolute;
+
+    width: 16px;
+    height: 16px;
+
+    right: 21px;
+    bottom: 18px;
+
+    mask-image: url("/__spritemap#sprite-arrow-up-view");
+    mask-repeat: no-repeat;
+    mask-size: 100%;
+    mask-position: center;
+
+    transform: rotate(180deg);
+  }
+
+  @media (min-width: $tablet) {
+    gap: 12px;
+  }
+
+  @media (min-width: $desktop) {
+    gap: 9px;
+  }
+}
+
+.select__wrapper--opened {
+  &::after {
+    transform: rotate(0deg);
+  }
+}
+
+.select__wrapper--light {
+  &::after {
+    background-color: $color-white;
+  }
+}
+
+.select__wrapper--dark {
+  &::after {
+    background-color: $color-dark-grey;
+  }
+}
+
+.select__select {
+  background-color: transparent;
+
+  display: block;
+
+  width: 100%;
+  height: 52px;
+
+  padding: 18px 42px 16px 21px;
+
+  border-radius: 8px;
+
+  appearance: none;
+
+  transition: border-color 0.3s, background-color 0.3s, color 0.3s;
+}
+
+.select__select--light {
+  color: $color-white;
+
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.select__select--light:hover,
+.select__select--light:focus-visible,
+.select__select--light:active {
+  background-color: transparent;
+
+  border-color: $color-white;
+
+  outline: none;
+}
+
+.select__select--light:disabled,
+.select__select--light.disabled {
+  pointer-events: none;
+
+  border-color: $color-white;
+
+  background-color: rgba(255, 255, 255, 0.2);
+
+  opacity: 0.4;
+}
+
+.select__option {
+  font-size: 14px;
+  line-height: 14px;
+
+  padding: 17px 20px;
+
+  color: $color-dark-grey;
+}
+
+.select__label {
+  font-size: 12px;
+  line-height: 14px;
+
+  transition: color 0.3s;
+
+  @media (min-width: $tablet) {
+    font-size: 14px;
+    line-height: 20px;
+  }
+}
+
+.select__select--light ~ .select__label {
+  color: rgba(240, 239, 233, 0.8);
+}
+
+.select__select--light:hover ~ .select__label,
+.select__select--light:focus-visible ~ .select__label,
+.select__select--light:active ~ .select__label {
+  color: $color-beige;
+}
+
+.select__select--light:disabled ~ .select__label,
+.select__select--light.disabled ~ .select__label {
+  color: rgba(240, 239, 233, 0.6);
+}
+
+.select__select--dark {
+  color: $color-dark-grey;
+
+  border: 1px solid rgba(72, 72, 72, 0.3);
+}
+
+.select__select--dark:hover,
+.select__select--dark:focus-visible,
+.select__select--dark:active {
+  background-color: transparent;
+
+  border-color: $color-dark-grey;
+
+  outline: none;
+}
+
+.select__select--dark:disabled,
+.select__select--dark.disabled {
+  pointer-events: none;
+
+  border-color: rgba(169, 175, 183, 0.5);
+
+  background-color: rgba(169, 175, 183, 0.2);
+}
+
+.select__select--dark ~ .select__label {
+  color: rgba(72, 72, 72, 0.8);
+}
+
+.select__select--dark:hover ~ .select__label,
+.select__select--dark:focus-visible ~ .select__label,
+.select__select--dark:active ~ .select__label {
+  color: $color-dark-grey;
+}
+
+.select__select--dark:disabled ~ .select__label,
+.select__select--dark.disabled ~ .select__label {
+  color: rgba(169, 175, 183, 0.6);
+}
+
+.select__select--error {
+  border-color: $color-red;
+
+  background-color: rgba(255, 94, 102, 0.2);
+}
+
+.select__select--light.select__select--error ~ .select__label {
+  color: rgba(240, 239, 233, 0.8);
+}
+
+.select__select--dark.select__select--error ~ .select__label {
+  color: $color-dark-grey;
+}

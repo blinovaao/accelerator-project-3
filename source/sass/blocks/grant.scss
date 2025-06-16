@@ -1,0 +1,97 @@
+.grant {
+  background-color: $color-blue;
+  color: $color-white;
+}
+
+.grant__wrapper {
+  padding: 71px 15px 70px;
+  margin: 0 auto;
+
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+
+  max-width: $mobile;
+
+  @media (min-width: $tablet) {
+    padding: 100px 45px;
+
+    gap: 50px;
+
+    max-width: $tablet;
+  }
+
+  @media (min-width: $desktop) {
+    padding: 120px 206px 120px 100px;
+
+    display: grid;
+    grid-template-columns: repeat(2, 498px);
+    gap: 138px;
+
+    max-width: $desktop;
+  }
+}
+
+.grant__title {
+  color: inherit;
+
+  margin: 0 0 14px;
+
+  @media (min-width: $tablet) {
+    margin: 0 0 30px;
+  }
+}
+
+.grant__inner p {
+  margin: 0 0 30px;
+
+  @media (min-width: $tablet) {
+    margin: 0 0 40px;
+
+    max-width: 498px;
+  }
+}
+
+.grant__inner p:not(:last-of-type) {
+  margin: 0 0 10px;
+}
+
+.grant__image {
+  border-radius: 16px;
+
+  display: block;
+
+  width: 290px;
+  height: auto;
+
+  @media (min-width: $tablet) {
+    width: 678px;
+  }
+}
+
+.grant__content {
+  @media (min-width: $desktop) {
+    padding: 10px 0 0;
+  }
+}
+
+.grant__text {
+  margin: 0 0 30px;
+
+  font-size: 18px;
+  line-height: 22px;
+
+  @media (min-width: $tablet) {
+    margin: 0 0 45px;
+
+    font-size: 28px;
+    line-height: 28px;
+  }
+
+  @media (min-width: $desktop) {
+    margin: 0 0 55px;
+
+    font-size: 32px;
+    line-height: 36px;
+  }
+}

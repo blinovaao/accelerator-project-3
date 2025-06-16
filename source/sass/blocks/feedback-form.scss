@@ -1,0 +1,83 @@
+.feedback-form {
+  display: flex;
+  flex-direction: column;
+  gap: 21px;
+
+  @media (min-width: $tablet) {
+    gap: 20px;
+  }
+
+  @media (min-width: $desktop) {
+    gap: 19px;
+  }
+}
+
+.feedback-form__select {
+  width: 260px;
+
+  @media (min-width: $tablet) {
+    width: unset;
+  }
+
+  @media (min-width: $desktop) {
+    margin: -2px 0 0;
+  }
+}
+
+.feedback-form__checkbox-input {
+  margin: -2px 0 0;
+
+  @media (min-width: $tablet) {
+    margin: 0;
+  }
+
+  @media (min-width: $desktop) {
+    margin: 1px 0 0;
+  }
+}
+
+.feedback-form__checkbox-label {
+  max-width: 200px;
+
+  &--tablet {
+    display: none;
+  }
+
+  @media (min-width: $tablet) {
+    max-width: unset;
+
+    padding: 1px 0 0;
+
+    &--mobile {
+      display: none;
+    }
+
+    &--tablet {
+      display: inline;
+    }
+  }
+
+  @media (min-width: $desktop) {
+    padding: 2px 0 0;
+  }
+}
+
+.feedback-form__submit {
+  width: 260px;
+
+  margin: -2px 0 0;
+  padding: 13px 58px 13px 21px;
+
+  @media (min-width: $tablet) {
+    width: 352px;
+
+    margin: 20px 0 0;
+    padding: 17px 81px 18px 31px;
+  }
+
+  @media (min-width: $desktop) {
+    width: 350px;
+
+    margin: 21px 0 0;
+  }
+}

@@ -1,0 +1,44 @@
+.footer-nav__list {
+  @include list-style;
+
+  display: flex;
+  justify-content: center;
+  gap: 20px 30px;
+  flex-wrap: wrap;
+
+  @media (min-width: $tablet) {
+    justify-content: space-between;
+
+    gap: 20px 15px;
+
+    width: 528px;
+  }
+
+  @media (min-width: $desktop) {
+    gap: 20px 31px;
+
+    width: unset;
+  }
+}
+
+.footer-nav__link {
+  color: $color-dark-grey;
+
+  text-decoration: none;
+
+  transition: color 0.3s;
+
+  &:hover {
+    color: rgba(49, 109, 194, 0.7);
+  }
+
+  &:focus-visible {
+    outline: none;
+
+    color: $color-blue;
+  }
+
+  &:active {
+    color: $color-dark-blue;
+  }
+}

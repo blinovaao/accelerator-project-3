@@ -1,0 +1,40 @@
+.reviews-slider {
+  @media (min-width: $desktop) {
+    overflow-x: clip;
+  }
+}
+
+.reviews-slider__list {
+  @include list-style;
+
+  display: flex;
+  gap: 15px;
+
+  width: max-content;
+
+  @media (min-width: $tablet) {
+    gap: 30px;
+
+    margin: 0 0 50px;
+  }
+
+  @media (min-width: $desktop) {
+    gap: 32px;
+  }
+}
+
+.reviews-slider__buttons {
+  position: absolute;
+
+  right: 1px;
+  top: -56px;
+
+  @media (min-width: $tablet) {
+    top: unset;
+    bottom: -10px;
+  }
+}
+
+.reviews-slider__scroll {
+  background-color: rgba(49, 109, 194, 0.35);
+}

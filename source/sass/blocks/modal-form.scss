@@ -1,0 +1,118 @@
+.modal-form {
+  display: flex;
+  flex-direction: column;
+
+  gap: 15px;
+
+  @media (min-width: $tablet) {
+    gap: 23px;
+  }
+
+  @media (min-width: $desktop) {
+    gap: 22px;
+  }
+}
+
+.modal-form__text-input {
+  gap: 8px;
+
+  @media (min-width: $tablet) {
+    gap: 15px;
+  }
+
+  @media (min-width: $desktop) {
+    gap: 14px;
+  }
+}
+
+.modal-form__label {
+  font-size: 14px;
+  line-height: 14px;
+}
+
+.modal-form__input {
+  height: 44px;
+
+  @media (min-width: $tablet) {
+    height: 50px;
+  }
+}
+
+.modal-form__select-wrapper {
+  gap: 8px;
+
+  &::after {
+    right: 20px;
+    bottom: 14px;
+  }
+
+  @media (min-width: $tablet) {
+    gap: 15px;
+
+    &::after {
+      bottom: 17px;
+    }
+  }
+
+  @media (min-width: $desktop) {
+    gap: 14px;
+  }
+}
+
+.modal-form__select {
+  height: 44px;
+
+  @media (min-width: $tablet) {
+    height: 50px;
+  }
+}
+
+.modal-form__checkbox {
+  @media (min-width: $tablet) {
+    margin: -2px 0 0;
+  }
+
+  @media (min-width: $desktop) {
+    margin: -1px 0 0;
+  }
+}
+
+.modal-form__checkbox-input {
+  margin: -1px 0 0;
+}
+
+.modal-form__checkbox-label {
+  padding: 1px 0 0;
+}
+
+.modal-form__submit {
+  margin: 9px 0 0;
+  padding: 12px 58px 12px 21px;
+
+  &::before {
+    right: 3px;
+  }
+
+  &::after {
+    right: 14px;
+
+    width: 12px;
+    height: 12px;
+  }
+
+  @media (min-width: $tablet) {
+    margin: 7px auto 0;
+    padding: 16px 81px 18px 29px;
+
+    width: 194px;
+
+    &::after {
+      right: 20px;
+    }
+  }
+
+  @media (min-width: $desktop) {
+    margin: 8px auto 0;
+    padding: 16px 81px 18px 29px;
+  }
+}

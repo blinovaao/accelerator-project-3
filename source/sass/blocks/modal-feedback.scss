@@ -1,0 +1,171 @@
+.modal-feedback {
+  position: fixed;
+
+  top: 0;
+  left: 0;
+
+  z-index: 20;
+
+  width: 100%;
+  height: 100%;
+
+  background-color: rgba(13, 29, 51, 0.4);
+
+  display: flex;
+
+  opacity: 0;
+
+  visibility: hidden;
+
+  transition: opacity 0.3s, visibility 0.3s;
+}
+
+.modal-feedback.opened {
+  opacity: 1;
+
+  visibility: visible;
+}
+
+.modal-feedback__overlay {
+  margin: auto;
+
+  max-width: 290px;
+
+  @media (min-width: $tablet) {
+    max-width: 510px;
+  }
+}
+
+.modal-feedback__wrapper {
+  background-color: $color-white;
+
+  padding: 37px 15px 40px;
+
+  border-radius: 16px;
+
+  position: relative;
+
+  @media (min-width: $tablet) {
+    padding: 55px 80px 60px;
+
+    max-width: 510px;
+  }
+
+  @media (min-width: $desktop) {
+    padding: 53px 80px 60px;
+  }
+}
+
+.modal-feedback__close-button {
+  position: absolute;
+
+  width: 16px;
+  height: 16px;
+
+  background-color: transparent;
+
+  border: none;
+
+  top: 20px;
+  right: 20px;
+
+  cursor: pointer;
+
+  &::after {
+    content: "";
+    position: absolute;
+
+    width: 15px;
+    height: 15px;
+
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+
+    background-color: $color-blue;
+    mask-image: url("/__spritemap#sprite-cross-menu-view");
+    mask-repeat: no-repeat;
+    mask-size: 100%;
+    mask-position: center;
+
+    transition: background-color 0.3s;
+  }
+
+  &:hover {
+    &::after {
+      background-color: rgba(49, 109, 194, 0.7);
+    }
+  }
+
+  &:focus-visible {
+    outline: none;
+
+    &::after {
+      background-color: $color-dark-grey;
+    }
+  }
+
+  &:active {
+    &::after {
+      background-color: $color-dark-blue;
+    }
+  }
+
+  @media (min-width: $tablet) {
+    width: 28px;
+    height: 28px;
+
+    top: 27px;
+    right: 27px;
+
+    &::after {
+      width: 22px;
+      height: 22px;
+    }
+  }
+}
+
+.modal-feedback__title {
+  margin: 0 auto 13px;
+
+  font-size: 18px;
+  line-height: 18px;
+  text-align: center;
+
+  color: $color-blue;
+
+  max-width: 220px;
+
+  @media (min-width: $tablet) {
+    margin: 0 auto 17px;
+
+    font-size: 28px;
+    line-height: 28px;
+  }
+
+  @media (min-width: $desktop) {
+    margin: 0 auto 14px;
+
+    font-size: 32px;
+    line-height: 36px;
+  }
+}
+
+.modal-feedback__text {
+  margin: 0 auto 25px;
+
+  max-width: 220px;
+
+  text-align: center;
+
+  @media (min-width: $tablet) {
+    margin: 0 auto 33px;
+
+    max-width: unset;
+  }
+
+  @media (min-width: $desktop) {
+    margin: 0 auto 32px;
+  }
+}

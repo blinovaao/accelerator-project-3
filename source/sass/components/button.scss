@@ -1,0 +1,338 @@
+.button {
+  display: inline-block;
+
+  padding: 11px 58px 11px 21px;
+
+  background-color: transparent;
+
+  text-decoration: none;
+
+  cursor: pointer;
+
+  transition: background-color 0.3s, color 0.3s;
+
+  @media (min-width: $tablet) {
+    padding: 16px 81px 18px 31px;
+  }
+
+  @media (min-width: $desktop) {
+    padding: 14px 81px 16px 31px;
+  }
+}
+
+.button--primary-blue {
+  border: 1px solid $color-blue;
+  border-radius: 30px;
+
+  position: relative;
+
+  color: $color-blue;
+
+  &::before {
+    content: "";
+    position: absolute;
+
+    width: 34px;
+    height: 34px;
+
+    background-color: $color-blue;
+
+    border-radius: 50%;
+
+    right: 4px;
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    transition: background-color 0.3s;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+
+    width: 10px;
+    height: 10px;
+
+    background-color: $color-white;
+    mask-image: url("/__spritemap#sprite-arrow-diagonal-view");
+    mask-repeat: no-repeat;
+    mask-size: 100%;
+    mask-position: center;
+
+    right: 16px;
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    transition: transform 0.3s, background-color 0.3s;
+  }
+
+  &:hover {
+    background-color: $color-blue;
+    color: $color-white;
+
+    &::before {
+      background-color: $color-white;
+    }
+
+    &::after {
+      background-color: $color-blue;
+
+      transform: translateY(-50%) rotate(45deg);
+    }
+  }
+
+  &:active {
+    background-color: $color-blue;
+    color: rgba(255, 255, 255, 0.7);
+
+    &::before {
+      background-color: $color-white;
+    }
+
+    &::after {
+      background-color: rgba(49, 109, 194, 0.7);
+
+      transform: translateY(-50%) rotate(45deg);
+    }
+  }
+
+  &:focus-visible {
+    outline: none;
+
+    &::after {
+      transform: translateY(-50%) rotate(45deg);
+    }
+  }
+
+  @media (min-width: $tablet) {
+    &::before {
+      width: 46px;
+      height: 46px;
+    }
+
+    &::after {
+      right: 22px;
+    }
+  }
+}
+
+.button--primary-blue:disabled,
+.button--primary-blue.disabled {
+  color: $color-grey;
+
+  border-color: $color-grey;
+
+  pointer-events: none;
+
+  &::before {
+    background-color: $color-grey;
+  }
+
+  &::after {
+    background-color: rgba(255, 255, 255, 0.6);
+  }
+}
+
+.button--primary-white {
+  border: 1px solid $color-white;
+  border-radius: 30px;
+
+  position: relative;
+
+  color: $color-white;
+
+  &::before {
+    content: "";
+    position: absolute;
+
+    width: 34px;
+    height: 34px;
+
+    background-color: $color-white;
+
+    border-radius: 50%;
+
+    right: 4px;
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    transition: background-color 0.3s;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+
+    width: 10px;
+    height: 10px;
+
+    background-color: $color-blue;
+    mask-image: url("/__spritemap#sprite-arrow-diagonal-view");
+    mask-repeat: no-repeat;
+    mask-size: 100%;
+    mask-position: center;
+
+    right: 16px;
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    transition: transform 0.3s, background-color 0.3s;
+  }
+
+  &:hover {
+    background-color: $color-white;
+    color: $color-blue;
+
+    &::before {
+      background-color: $color-blue;
+    }
+
+    &::after {
+      background-color: $color-white;
+
+      transform: translateY(-50%) rotate(45deg);
+    }
+  }
+
+  &:active {
+    background-color: $color-white;
+    color: rgba(49, 109, 194, 0.7);
+
+    &::before {
+      background-color: $color-blue;
+    }
+
+    &::after {
+      background-color: rgba(255, 255, 255, 0.7);
+
+      transform: translateY(-50%) rotate(45deg);
+    }
+  }
+
+  &:focus-visible {
+    outline: none;
+
+    &::after {
+      transform: translateY(-50%) rotate(45deg);
+    }
+  }
+
+  @media (min-width: $tablet) {
+    &::before {
+      width: 46px;
+      height: 46px;
+    }
+
+    &::after {
+      right: 22px;
+    }
+  }
+}
+
+.button--primary-white:disabled,
+.button--primary-white.disabled {
+  color: $color-grey;
+
+  border-color: $color-grey;
+
+  pointer-events: none;
+
+  &::before {
+    background-color: $color-grey;
+  }
+
+  &::after {
+    background-color: rgba(255, 255, 255, 0.6);
+  }
+}
+
+.button--secondary-blue {
+  width: 30px;
+  height: 30px;
+
+  padding: 15px;
+
+  border-radius: 50%;
+
+  position: relative;
+
+  background-color: $color-blue;
+
+  &::after {
+    content: "";
+    position: absolute;
+
+    width: 10px;
+    height: 10px;
+
+    background-color: $color-white;
+    mask-image: url("/__spritemap#sprite-arrow-diagonal-view");
+    mask-repeat: no-repeat;
+    mask-size: 100%;
+    mask-position: center;
+
+    left: 50%;
+    top: 50%;
+
+    transform: translate(-50%, -50%);
+
+    transition: transform 0.3s, background-color 0.3s;
+  }
+
+  &:hover {
+    background-color: $color-white;
+
+    &::after {
+      background-color: $color-blue;
+
+      transform: translate(-50%, -50%) rotate(45deg);
+    }
+  }
+
+  &:active {
+    background-color: $color-white;
+
+    &::after {
+      background-color: rgba(49, 109, 194, 0.7);
+
+      transform: translate(-50%, -50%) rotate(45deg);
+    }
+  }
+
+  &:focus-visible {
+    outline: none;
+
+    &::after {
+      transform: translate(-50%, -50%) rotate(45deg);
+    }
+  }
+}
+
+.button--secondary-blue:disabled,
+.button--secondary-blue.disabled {
+  pointer-events: none;
+
+  background-color: $color-grey;
+
+  &::after {
+    background-color: rgba(255, 255, 255, 0.6);
+  }
+}
+
+.button__text {
+  font-size: 12px;
+  line-height: 12px;
+  font-family: inherit;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.2px;
+
+  @media (min-width: $tablet) {
+    font-size: 14px;
+    line-height: 14px;
+  }
+}

@@ -1,0 +1,66 @@
+.policy {
+  display: flex;
+  flex-direction: column;
+  gap: 13px;
+
+  @media (min-width: $tablet) {
+    gap: 11px;
+  }
+
+  @media (min-width: $desktop) {
+    flex-direction: row-reverse;
+    justify-content: space-between;
+  }
+}
+
+.policy__link {
+  font-size: 12px;
+  line-height: 14px;
+  text-underline-offset: 4px;
+
+  color: $color-dark-grey;
+
+  transition: color 0.3s;
+
+  &:hover {
+    color: rgb(49, 109, 194, 0.7);
+  }
+
+  &:focus-visible {
+    outline: none;
+
+    color: $color-blue;
+  }
+
+  &:active {
+    color: $color-dark-blue;
+  }
+
+  @media (min-width: $tablet) {
+    text-underline-offset: 3px;
+  }
+
+  @media (min-width: $desktop) {
+    font-size: 14px;
+    line-height: 18px;
+    text-underline-offset: 6px;
+  }
+}
+
+.policy__text {
+  font-size: 12px;
+  line-height: 14px;
+
+  color: rgba(78, 78, 78, 0.6);
+
+  margin: 0;
+
+  @media (min-width: $desktop) {
+    font-size: 14px;
+    line-height: 18px;
+
+    color: $color-dark-grey;
+
+    padding: 2px 0 0;
+  }
+}

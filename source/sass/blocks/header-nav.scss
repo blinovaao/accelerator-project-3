@@ -1,0 +1,305 @@
+@keyframes change-width {
+  from {
+    width: 136px;
+  }
+
+  to {
+    width: 100%;
+  }
+}
+
+.header-nav--opened {
+  width: 290px;
+
+  right: 15px;
+
+  position: absolute;
+
+  @media (min-width: $tablet) {
+    width: 286px;
+
+    right: 45px;
+  }
+
+  @media (min-width: $desktop) {
+    right: 100px;
+  }
+}
+
+.header-nav__button {
+  padding: 18px 70px 18px 20px;
+
+  background-color: $color-white;
+
+  width: 136px;
+
+  &::before {
+    width: 46px;
+    height: 46px;
+
+    right: 4px;
+  }
+
+  &::after {
+    mask-image: url("/__spritemap#sprite-burger-menu-view");
+
+    width: 16px;
+    height: 16px;
+
+    right: 19px;
+
+    transition: mask-image 0.3s, transform 0.3s;
+  }
+
+  &:hover {
+    &::after {
+      transform: translateY(-50%);
+    }
+  }
+
+  &:focus-visible {
+    &::after {
+      transform: translateY(-50%) scale(1.3);
+    }
+  }
+
+  &:active {
+    &::after {
+      transform: translateY(-50%);
+    }
+  }
+
+  @media (min-width: $tablet) {
+    padding: 17px 70px 19px 20px;
+  }
+}
+
+.header-nav__button.opened {
+  background-color: $color-blue;
+  color: $color-white;
+
+  width: 100%;
+
+  text-align: left;
+
+  animation: change-width ease-in 0.3s;
+
+  &::before {
+    background-color: $color-white;
+  }
+
+  &::after {
+    background-color: $color-blue;
+    mask-image: url("/__spritemap#sprite-cross-menu-view");
+  }
+
+  &:hover {
+    background-color: $color-white;
+    color: $color-blue;
+
+    &::before {
+      background-color: $color-blue;
+    }
+
+    &::after {
+      background-color: $color-white;
+
+      transform: translateY(-50%);
+    }
+  }
+
+  &:active {
+    background-color: $color-white;
+    color: rgba(49, 109, 194, 0.7);
+
+    &::before {
+      background-color: $color-blue;
+    }
+
+    &::after {
+      background-color: rgba(255, 255, 255, 0.7);
+
+      transform: translateY(-50%);
+    }
+  }
+
+  &:focus-visible {
+    outline: none;
+
+    &::after {
+      transform: translateY(-50%);
+    }
+  }
+}
+
+.header-nav__button span {
+  font-size: 14px;
+  line-height: 14px;
+
+  letter-spacing: 0.3px;
+}
+
+.header-nav__list {
+  @include list-style;
+
+  padding: 31px 25px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  visibility: hidden;
+
+  position: absolute;
+
+  right: 0;
+  top: calc(100% + 4px);
+
+  width: 290px;
+
+  border-radius: 16px;
+
+  opacity: 0;
+
+  background-color: $color-blue;
+
+  transform: translateY(-100);
+
+  transition: opacity 0.3s, transform 0.3s;
+
+  @media (min-width: $tablet) {
+    width: 286px;
+  }
+}
+
+.header-nav__list.visible {
+  visibility: visible;
+
+  opacity: 1;
+
+  transform: translateY(0);
+}
+
+.header-nav__link {
+  color: rgba(255, 255, 255, 0.7);
+  background-color: transparent;
+
+  border: none;
+
+  font-size: 16px;
+  line-height: 16px;
+  font-weight: 500;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+
+  transition: color 0.3s;
+
+  cursor: pointer;
+
+  &:hover {
+    color: rgba(255, 255, 255, 0.9);
+  }
+
+  &:focus-within {
+    outline: none;
+
+    color: $color-white;
+  }
+
+  &:active {
+    color: $color-white;
+  }
+}
+
+.header-nav__link--more {
+  padding: 0 22px 0 0;
+
+  position: relative;
+
+  &::after {
+    content: "";
+    position: absolute;
+
+    width: 12px;
+    height: 12px;
+
+    right: 0;
+    top: 50%;
+
+    transform: translateY(-50%) rotate(180deg);
+
+    background-color: currentColor;
+    mask-image: url("/__spritemap#sprite-arrow-up-view");
+    mask-repeat: no-repeat;
+    mask-size: 100%;
+    mask-position: center;
+
+    transition: transform 0.3s;
+  }
+}
+
+.header-nav__link--more.opened {
+  &::after {
+    transform: translateY(-50%);
+  }
+}
+
+.header-nav__sublist {
+  @include list-style;
+
+  padding: 0;
+
+  display: flex;
+  flex-direction: column;
+
+  height: 0;
+
+  visibility: hidden;
+
+  opacity: 0;
+
+  transform: translateY(-100%);
+
+  gap: 8px;
+
+  transition: opacity 0.3s, transform 0.3s;
+}
+
+.header-nav__sublist.opened {
+  visibility: visible;
+
+  opacity: 1;
+
+  transform: translateY(0);
+
+  height: auto;
+
+  padding: 12px 0 0 16px;
+}
+
+.header-nav__sublink {
+  color: rgba(255, 255, 255, 0.7);
+
+  font-size: 16px;
+  line-height: 16px;
+  font-weight: 400;
+  text-decoration: none;
+
+  transition: color 0.3s;
+
+  &:hover {
+    color: rgba(255, 255, 255, 0.9);
+  }
+
+  &:focus-visible {
+    outline: none;
+
+    color: $color-white;
+  }
+
+  &:active {
+    color: $color-white;
+  }
+}
+

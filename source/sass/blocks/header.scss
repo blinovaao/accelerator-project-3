@@ -1,0 +1,34 @@
+.header__wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 20px 15px 0;
+  margin: 0 auto;
+
+  max-width: $mobile;
+  min-height: 54px;
+
+  position: relative;
+
+  @media (min-width: $tablet) {
+    padding: 30px 45px 0;
+
+    max-width: $tablet;
+    min-height: 86px;
+  }
+
+  @media (min-width: $desktop) {
+    padding: 30px 100px 0;
+
+    max-width: $desktop;
+  }
+}
+
+.header__logo {
+  z-index: -1;
+}
+
+.header__nav {
+  position: relative;
+}

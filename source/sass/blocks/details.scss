@@ -1,0 +1,80 @@
+.details {
+  @include list-style;
+
+  display: flex;
+  flex-wrap: wrap;
+  gap: 26px;
+}
+
+.details__item {
+  display: flex;
+  flex-direction: column;
+
+  gap: 8px;
+
+  @media (min-width: $tablet) {
+    gap: 10px;
+  }
+
+  @media (min-width: $desktop) {
+    gap: 9px;
+  }
+}
+
+.details__title {
+  font-size: 12px;
+  line-height: 12px;
+  letter-spacing: 0.1px;
+  text-transform: uppercase;
+
+  color: $color-blue;
+}
+
+.details__text {
+  font-size: 12px;
+  line-height: 14px;
+  font-style: normal;
+
+  color: inherit;
+
+  @media (min-width: $tablet) {
+    font-size: 14px;
+    line-height: 20px;
+  }
+}
+
+.details__link {
+  font-size: 12px;
+  line-height: 14px;
+  text-decoration: none;
+  font-style: normal;
+
+  color: inherit;
+
+  transition: color 0.3s;
+
+  &:hover {
+    color: rgba(255, 255, 255, 0.7);
+  }
+
+  &:focus-visible {
+    outline: none;
+
+    color: $color-dark-grey;
+
+    text-decoration: underline;
+    text-underline-offset: 5px;
+  }
+
+  &:active {
+    color: $color-white;
+
+    text-decoration: underline;
+    text-underline-offset: 5px;
+  }
+
+  @media (min-width: $tablet) {
+    font-size: 14px;
+    line-height: 20px;
+  }
+}

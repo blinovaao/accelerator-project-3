@@ -1,0 +1,72 @@
+.hero-pagination {
+  @include list-style;
+
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+
+  background-color: $color-white;
+
+  width: fit-content;
+
+  border-radius: 12px 12px 0 0;
+
+  @media (min-width: $tablet) {
+    border-radius: 20px 20px 0 0;
+  }
+}
+
+.hero-pagination__item {
+  display: flex;
+}
+
+.hero-pagination__button {
+  display: inline-block;
+
+  width: 8px;
+  height: 8px;
+
+  border: 2px solid $color-blue;
+  border-radius: 50%;
+
+  background-color: transparent;
+
+  padding: 2px;
+
+  cursor: pointer;
+
+  transition: 0.3s background-color, 0.3s border-color;
+
+  &:hover {
+    border-color: $color-white;
+
+    background-color: $color-blue;
+  }
+
+  &:focus-visible {
+    outline: none;
+
+    background-color: $color-blue;
+
+    border-color: transparent;
+  }
+
+  &:active {
+    background-color: $color-dark-blue;
+
+    border-color: transparent;
+  }
+
+  &--current {
+    background-color: $color-dark-blue;
+
+    border-color: transparent;
+  }
+
+  @media (min-width: $tablet) {
+    width: 12px;
+    height: 12px;
+
+    padding: 4px;
+  }
+}

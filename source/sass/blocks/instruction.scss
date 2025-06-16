@@ -1,0 +1,81 @@
+.instruction {
+  @include list-style;
+
+  padding: 0 0 0 15px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+
+  @media (min-width: $tablet) {
+    padding: 0 0 0 20px;
+
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 25px 48px;
+  }
+
+  @media (min-width: $desktop) {
+    display: flex;
+    gap: 23px;
+  }
+}
+
+.instruction__item {
+  border: 1px solid $color-white;
+  border-radius: 16px;
+
+  padding: 24px 25px;
+
+  position: relative;
+
+  counter-increment: count 1;
+
+  &::before {
+    content: counter(count, decimal);
+    position: absolute;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    top: -6px;
+    left: 0;
+
+    transform: translateX(-50%);
+
+    width: 24px;
+    height: 32px;
+
+    font-size: 18px;
+    line-height: 18px;
+    font-weight: 500;
+
+    background-color: $color-blue;
+  }
+
+  @media (min-width: $tablet) {
+    padding: 30px 25px;
+
+    &::before {
+      align-items: start;
+
+      padding: 5px 0 0;
+
+      top: -11px;
+
+      width: 40px;
+      height: 37px;
+
+      font-size: 22px;
+      line-height: 22px;
+      letter-spacing: 0.2px;
+    }
+  }
+}
+
+.instruction__description {
+  margin: 0;
+
+  color: $color-beige;
+}

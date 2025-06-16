@@ -1,0 +1,86 @@
+.slider-buttons {
+  display: flex;
+  gap: 6px;
+
+  @media (min-width: $tablet) {
+    gap: 8px;
+  }
+}
+
+.slider-buttons__button {
+  display: inline-block;
+
+  width: 22px;
+  height: 22px;
+
+  background-color: transparent;
+
+  border: none;
+  border-radius: 50%;
+
+  cursor: pointer;
+
+  transition: background-color 0.3s;
+
+  position: relative;
+
+  &::after {
+    content: "";
+    position: absolute;
+
+    width: 9px;
+    height: 9px;
+
+    left: 50%;
+    top: 50%;
+
+    background-color: $color-blue;
+    mask-repeat: no-repeat;
+    mask-position: center;
+    mask-size: cover;
+    mask-image: url("/__spritemap#sprite-arrow-diagonal-view");
+
+    transition: background-color 0.3s;
+  }
+
+  &:hover {
+    &::after {
+      background-color: rgba(49, 109, 194, 0.7);
+    }
+  }
+
+  &:focus-visible {
+    outline: none;
+
+    background-color: $color-white;
+  }
+
+  &:active {
+    background-color: $color-white;
+
+    &::after {
+      background-color: rgba(49, 109, 194, 0.7);
+    }
+  }
+}
+
+.slider-buttons__button:disabled,
+.slider-buttons__button.disabled {
+  pointer-events: none;
+
+  &::after {
+    background-color: $color-grey;
+  }
+}
+
+.slider-buttons__button--prev {
+  &::after {
+    transform: translate(-50%, -50%) rotate(-135deg);
+  }
+}
+
+.slider-buttons__button--next {
+  &::after {
+    transform: translate(-50%, -50%) rotate(45deg);
+  }
+}

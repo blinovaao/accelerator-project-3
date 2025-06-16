@@ -1,0 +1,41 @@
+.reviews__wrapper {
+  padding: 56px 15px 50px;
+  margin: 0 auto;
+
+  max-width: $mobile;
+
+  @media (min-width: $tablet) {
+    padding: 50px 45px 60px;
+
+    max-width: $tablet;
+  }
+
+  @media (min-width: $desktop) {
+    padding: 65px 100px 70px;
+
+    max-width: $desktop;
+  }
+}
+
+.reviews__title {
+  margin: 0 0 34px;
+
+  max-width: 230px;
+
+  @media (min-width: $tablet) {
+    margin: 0 0 40px;
+
+    max-width: 400px;
+  }
+
+  @media (min-width: $desktop) {
+    padding: 0 0 0 3px;
+    margin: 0 0 45px;
+
+    max-width: 900px;
+  }
+}
+
+.reviews__slider {
+  position: relative;
+}
